@@ -1,3 +1,9 @@
+/* Project: Hospital Patient Management System
+ * Category: Medical Projects
+ * Description: A comprehensive system for hospitals to manage doctors, 
+ *              patients, appointments, diagnoses, and billing.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -351,7 +357,7 @@ void diagnosePatient() {
     fclose(fp);
 }
 
-// Update the BIll Item --------------------------------------------------------
+// Update the Bill Item --------------------------------------------------------
 void updateBillItem() {
     int apptID, itemNo;
     char choice;
@@ -485,7 +491,7 @@ int main() {
         printf("9. View Patient History\n");
         printf("10. Update Bill Items\n");
         printf("11. Exit\n");
-        printf("Enter your choice: "); 
+        printf("\nEnter your choice: "); 
         scanf("%d",&choice); getchar();
 
         switch(choice){

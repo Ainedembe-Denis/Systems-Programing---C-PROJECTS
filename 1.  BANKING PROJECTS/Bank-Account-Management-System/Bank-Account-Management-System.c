@@ -58,7 +58,7 @@ int login() {
         strcpy(CURRENT_USER, username);
         strcpy(CURRENT_ROLE, "TELLER");
 
-        printf("? Teller login successful.\n");
+        printf(" Teller login successful.\n");
         logAction("LOGIN_SUCCESS", 0, 0);
         return 1;
     }
@@ -70,7 +70,7 @@ int login() {
         strcpy(CURRENT_USER, username);
         strcpy(CURRENT_ROLE, "ADMIN");
 
-        printf("? Admin login successful.\n");
+        printf(" Admin login successful.\n");
         logAction("LOGIN_SUCCESS", 0, 0);
         return 1;
     }
@@ -79,7 +79,7 @@ int login() {
     strcpy(CURRENT_USER, username);
     logAction("LOGIN_FAILED", 0, 0);
 
-    printf("? Invalid credentials!\n");
+    printf(" Invalid credentials!\n");
     return 0;
 }
 
@@ -192,7 +192,7 @@ void createAccount() {
 
     // ?? Prevent duplicates
     if (accountExists(acc.accountNumber)) {
-        printf("? Account already exists!\n");
+        printf(" Account already exists!\n");
         fclose(fp);
         return;
     }
@@ -203,7 +203,7 @@ void createAccount() {
 
     if (strcmp(acc.currency, "UGX") != 0 &&
         strcmp(acc.currency, "USD") != 0) {
-        printf("? Invalid currency!\n");
+        printf(" Invalid currency!\n");
         fclose(fp);
         return;
     }
@@ -219,9 +219,9 @@ void createAccount() {
 	    (strcmp(acc.currency, "USD") == 0 && acc.balance < MIN_USD)) {
 	
 	    if (strcmp(acc.currency, "UGX") == 0)
-	        printf("? Minimum deposit for this account is Shs %.2f\n", MIN_UGX);
+	        printf("Minimum deposit for this account is Shs %.2f\n", MIN_UGX);
 	    else
-	        printf("? Minimum deposit for this account is $ %.2f\n", MIN_USD);
+	        printf("Minimum deposit for this account is $ %.2f\n", MIN_USD);
 	
 	    fclose(fp);
 	    return;
@@ -232,7 +232,7 @@ void createAccount() {
 
     logAction("ACCOUNT_CREATED", acc.accountNumber, acc.balance);
 
-    printf("? Account created successfully!\n");
+    printf(" Account created successfully!\n");
 }
 
 // Deposit Money -----------------------------
@@ -255,14 +255,14 @@ void deposit() {
 	printf("Enter amount to deposit: ");
     scanf("%f", &amount);
  
-	// ? Minimum deposit enforcement
+	// Minimum deposit enforcement
 	if ((strcmp(acc.currency, "UGX") == 0 && acc.balance < MIN_UGX) ||
 	    (strcmp(acc.currency, "USD") == 0 && acc.balance < MIN_USD)) {
 	
 	    if (strcmp(acc.currency, "UGX") == 0)
-	        printf("? Minimum deposit for this account is Shs %.2f\n", MIN_UGX);
+	        printf("Minimum deposit for this account is Shs %.2f\n", MIN_UGX);
 	    else
-	        printf("? Minimum deposit for this account is $ %.2f\n", MIN_USD);
+	        printf("Minimum deposit for this account is $ %.2f\n", MIN_USD);
 	
 	    fclose(fp);
 	    return;
@@ -278,7 +278,7 @@ void deposit() {
             scanf(" %c", &confirm);
 
             if (confirm != 'Y' && confirm != 'y') {
-                printf("? Deposit cancelled.\n");
+                printf("Deposit cancelled.\n");
                 fclose(fp);
                 return;
             }
@@ -290,7 +290,7 @@ void deposit() {
 
             logAction("DEPOSIT", acc.accountNumber, amount);
 
-            printf("? Deposit successful! New Balance: %s %.2f\n",
+            printf("Deposit successful! New Balance: %s %.2f\n",
                    currencySymbol(acc.currency), acc.balance);
 
             found = 1;
@@ -327,7 +327,7 @@ void withdraw() {
             scanf("%f", &amount);
 
             if (amount > acc.balance) {
-                printf("? Insufficient balance!\n");
+                printf("Insufficient balance!\n");
             } else {
                 acc.balance -= amount;
 
@@ -336,7 +336,7 @@ void withdraw() {
 
                 logAction("WITHDRAW", acc.accountNumber, amount);
 
-                printf("? Withdrawal successful! Remaining Balance: %s %.2f\n",
+                printf("Withdrawal successful! Remaining Balance: %s %.2f\n",
                        currencySymbol(acc.currency), acc.balance);
             }
 
@@ -346,7 +346,7 @@ void withdraw() {
     }
 
     if (!found)
-        printf("? Account not found!\n");
+        printf("Account not found!\n");
 
     fclose(fp);
 }
@@ -404,7 +404,7 @@ void viewLogs() {
     scanf("%19s", password);
 
     if (strcmp(password, LOG_PASSWORD) != 0) {
-        printf("? Incorrect password!\n");
+        printf(" Incorrect password!\n");
         fclose(log);
         return;
     }

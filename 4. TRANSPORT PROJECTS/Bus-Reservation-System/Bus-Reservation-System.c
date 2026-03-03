@@ -90,7 +90,7 @@ void bookSeat() {
     printf("Seat booked successfully!\n");
 }
 
-// Concel Booking --------------------------------------------------------------
+// Cancel Booking --------------------------------------------------------------
 void cancelBooking() {
     int row, col;
     struct Booking b;
@@ -135,7 +135,7 @@ void cancelBooking() {
         printf("Seat was not booked!\n");
 }
 
-// Display Passangers ----------------------------------------------------------
+// Display Passengers ----------------------------------------------------------
 
 void displayPassengers() {
     FILE *fp = fopen(FILE_NAME, "rb");

@@ -332,6 +332,7 @@ void showTotalSales() {
 }
 
 // MAIN METHOD -----------------------------------------------------------------
+
 int main() {
 
     int choice;

@@ -132,7 +132,7 @@ void displayReportMenu() {
     }
 }
 
-// ================= DISPLAY ALL =================
+//DISPLAY ALL
 void displayAllStudents() {
     if (count == 0) {
         printf("No student records available.\n");
