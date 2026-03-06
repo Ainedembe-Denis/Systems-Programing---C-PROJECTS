@@ -1,9 +1,3 @@
-/* Project: Hospital Patient Management System
- * Category: Medical Projects
- * Description: A comprehensive system for hospitals to manage doctors, 
- *              patients, appointments, diagnoses, and billing.
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

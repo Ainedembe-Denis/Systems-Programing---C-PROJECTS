@@ -201,7 +201,7 @@ int findStudentById(int id) {
     return -1;
 }
 
-// SORT
+// SORT BY AVERAGE
 void sortByAverage() {
     struct Student temp;
 	int i, j;
@@ -216,7 +216,7 @@ void sortByAverage() {
     }
 }
 
-// SAVE
+// SAVE TO FILE
 void saveToFile() {
     FILE *fp = fopen("students.dat", "wb");
     if (!fp) return;
@@ -226,7 +226,7 @@ void saveToFile() {
     fclose(fp);
 }
 
-// LOAD 
+// LOAD FILE
 void loadFromFile() {
     FILE *fp = fopen("students.dat", "rb");
     if (!fp) return;

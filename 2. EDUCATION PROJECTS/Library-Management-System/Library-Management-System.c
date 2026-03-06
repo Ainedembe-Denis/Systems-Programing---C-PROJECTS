@@ -1,10 +1,3 @@
-/*
- * Project: Library Management System
- * Category: Education Projects
- * Description: Manages a collection of books, allowing additions, searches, 
- *              issuing, and returning of books with due date tracking.
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
