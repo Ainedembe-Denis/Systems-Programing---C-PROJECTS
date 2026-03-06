@@ -68,3 +68,4 @@ int checkEligibility(double emi, double salary) {
     }
 }
 
+
